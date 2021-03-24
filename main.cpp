@@ -146,12 +146,14 @@ int main()
 
     cout<<"Do you want to have a random initial state?\n"
           "Warning: some random initial states may lead to unsolvable problems.\n"
-          "Type yes or no:"<<endl;
+          "Type yes or no:\n";
     string useRand;
     cin>>useRand;
+    cout<<endl;
     while (useRand != "Yes" && useRand != "yes" && useRand != "No" && useRand != "no") {
-        cout<<"Please give a valid answer of yes or no:"<<endl;
+        cout<<"Please give a valid answer of yes or no:\n";
         cin>>useRand;
+        cout<<endl;
     }
     if (useRand == "Yes" || useRand == "yes") {
         for (int i = 0 ; i < 3 ; i++) {
