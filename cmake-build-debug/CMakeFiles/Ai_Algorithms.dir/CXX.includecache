@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.cpp
+Board.h
+D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.h
+
+D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.h
+string
+-
+sstream
+-
+vector
+-
+cmath
+-
+iostream
+-
+
+D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/main.cpp
+iostream
+-
+stack
+-
+queue
+-
+unordered_map
+-
+unordered_set
+-
+Board.h
+D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.h
+
