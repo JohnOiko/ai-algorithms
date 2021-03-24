@@ -1,4 +1,4 @@
-# Install script for directory: D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms
+# Install script for directory: D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

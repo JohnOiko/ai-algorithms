@@ -62,10 +62,10 @@ RM = "D:\JetBrains\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms"
+CMAKE_SOURCE_DIR = "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\cmake-build-debug"
+CMAKE_BINARY_DIR = "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Ai_Algorithms.dir/depend.make
@@ -78,29 +78,29 @@ include CMakeFiles/Ai_Algorithms.dir/flags.make
 
 CMakeFiles/Ai_Algorithms.dir/main.cpp.obj: CMakeFiles/Ai_Algorithms.dir/flags.make
 CMakeFiles/Ai_Algorithms.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Ai_Algorithms.dir/main.cpp.obj"
-	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Ai_Algorithms.dir\main.cpp.obj -c "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Ai_Algorithms.dir/main.cpp.obj"
+	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Ai_Algorithms.dir\main.cpp.obj -c "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\main.cpp"
 
 CMakeFiles/Ai_Algorithms.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ai_Algorithms.dir/main.cpp.i"
-	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\main.cpp" > CMakeFiles\Ai_Algorithms.dir\main.cpp.i
+	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\main.cpp" > CMakeFiles\Ai_Algorithms.dir\main.cpp.i
 
 CMakeFiles/Ai_Algorithms.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ai_Algorithms.dir/main.cpp.s"
-	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\main.cpp" -o CMakeFiles\Ai_Algorithms.dir\main.cpp.s
+	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\main.cpp" -o CMakeFiles\Ai_Algorithms.dir\main.cpp.s
 
 CMakeFiles/Ai_Algorithms.dir/Board.cpp.obj: CMakeFiles/Ai_Algorithms.dir/flags.make
 CMakeFiles/Ai_Algorithms.dir/Board.cpp.obj: ../Board.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ai_Algorithms.dir/Board.cpp.obj"
-	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Ai_Algorithms.dir\Board.cpp.obj -c "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\Board.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ai_Algorithms.dir/Board.cpp.obj"
+	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Ai_Algorithms.dir\Board.cpp.obj -c "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\Board.cpp"
 
 CMakeFiles/Ai_Algorithms.dir/Board.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ai_Algorithms.dir/Board.cpp.i"
-	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\Board.cpp" > CMakeFiles\Ai_Algorithms.dir\Board.cpp.i
+	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\Board.cpp" > CMakeFiles\Ai_Algorithms.dir\Board.cpp.i
 
 CMakeFiles/Ai_Algorithms.dir/Board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ai_Algorithms.dir/Board.cpp.s"
-	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\Board.cpp" -o CMakeFiles\Ai_Algorithms.dir\Board.cpp.s
+	"D:\Code Blocks\CodeBlocks\MinGW\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\Board.cpp" -o CMakeFiles\Ai_Algorithms.dir\Board.cpp.s
 
 # Object files for target Ai_Algorithms
 Ai_Algorithms_OBJECTS = \
@@ -116,7 +116,7 @@ Ai_Algorithms.exe: CMakeFiles/Ai_Algorithms.dir/build.make
 Ai_Algorithms.exe: CMakeFiles/Ai_Algorithms.dir/linklibs.rsp
 Ai_Algorithms.exe: CMakeFiles/Ai_Algorithms.dir/objects1.rsp
 Ai_Algorithms.exe: CMakeFiles/Ai_Algorithms.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Ai_Algorithms.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Ai_Algorithms.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Ai_Algorithms.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -129,6 +129,6 @@ CMakeFiles/Ai_Algorithms.dir/clean:
 .PHONY : CMakeFiles/Ai_Algorithms.dir/clean
 
 CMakeFiles/Ai_Algorithms.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\cmake-build-debug" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\cmake-build-debug" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai Algorithms\cmake-build-debug\CMakeFiles\Ai_Algorithms.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\cmake-build-debug" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\cmake-build-debug" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms\cmake-build-debug\CMakeFiles\Ai_Algorithms.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Ai_Algorithms.dir/depend
 

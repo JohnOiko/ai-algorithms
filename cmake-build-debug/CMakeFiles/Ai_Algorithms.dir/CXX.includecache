@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.h
+D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
 iostream
 -
 cmath
@@ -18,7 +18,7 @@ vector
 sstream
 -
 
-D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/main.cpp
+D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/main.cpp
 iostream
 -
 stack
@@ -32,5 +32,5 @@ unordered_map
 unordered_set
 -
 Board.h
-D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.h
+D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
 
