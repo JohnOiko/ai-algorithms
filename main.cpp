@@ -1,11 +1,10 @@
 #include <iostream>
 #include <stack>
 #include <queue>
+#include <ctime>
 #include <unordered_map>
 #include <unordered_set>
 #include "Board.h"
-
-#include <ctime>
 
 using namespace std;
 
