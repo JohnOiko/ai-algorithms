@@ -5,6 +5,8 @@
 #include <unordered_set>
 #include "Board.h"
 
+#include <ctime>
+
 using namespace std;
 
 Board *DFS(Board *initial, Board *goal, long long &examined, long long &mem)
@@ -141,6 +143,34 @@ int main()
 {
     long long mem,examined;
     int start[3][3] = {3, 6, -1, 1, 4, 2, 7, 5, 8};
+
+    cout<<"Do you want to have a random initial state?\n"
+          "Warning: some random initial states may lead to unsolvable problems.\n"
+          "Type yes or no:"<<endl;
+    string useRand;
+    cin>>useRand;
+    while (useRand != "Yes" && useRand != "yes" && useRand != "No" && useRand != "no") {
+        cout<<"Please give a valid answer of yes or no:"<<endl;
+        cin>>useRand;
+    }
+    if (useRand == "Yes" || useRand == "yes") {
+        for (int i = 0 ; i < 3 ; i++) {
+            for (int j = 0 ; j < 3 ; j++) {
+                start[i][j] = 0;
+            }
+        }
+        srand(time(nullptr));
+        int randIndex = rand()%9;
+        start[randIndex/3][randIndex%3] = -1;
+        for (int i = 1 ; i < 9 ; i++) {
+            randIndex = rand()%9;
+            while (start[randIndex/3][randIndex%3] != 0) {
+                randIndex = rand()%9;
+            }
+            start[randIndex/3][randIndex%3] = i;
+        }
+    }
+
     int ending[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, -1};
     Board m(start);
     Board g(ending);
@@ -189,7 +219,7 @@ int main()
         cout<<"depth = "<<Astarsol->getDepth()<<", Mem: "<<mem<<", Examined: "<<examined<<"\n"<<endl;
     }
     else
-        cout<<"Problem unsolvable"<<endl;
+        cout<<"Problem unsolvable"<<"\n"<<endl;
 
     bool flag = true;
     while (flag) {
@@ -206,7 +236,7 @@ int main()
         else if (choice == "4" && Astarsol != nullptr)
             Astarsol->printPath();
         else if (choice == "1" || choice == "2" || choice == "3" || choice == "4") {
-            cout<<"No path available as solution wasn't found"<<endl;
+            cout<<"No path available as solution wasn't found\n"<<endl;
         }
         else {
             flag = false;
