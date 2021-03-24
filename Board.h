@@ -20,16 +20,16 @@ class Board
 public:
     Board(int table[WIDTH][HEIGHT]);
     int getContent(int x, int y);
-    int getGapX();
-    int getGapY();
+    int getGapX() const;
+    int getGapY() const;
     int getDepth();
-    double getHvalue();
+    double getHvalue() const;
     unsigned long getKey();
     string getActionName()const {return actionName;}
     Board *getPrevious()const {return prev;}
     void setContent(int newContent, int x, int y);
-    int setGapX(int x);
-    int setGapY(int y);
+    void setGapX(int x);
+    void setGapY(int y);
     void setHvalue(double h);
     void setActionName(string s) {actionName=s;}
     void setPrevious (Board *p) {prev=p;}
@@ -39,7 +39,7 @@ public:
     bool goRight(Board &n);
     void findContent(int key, int &x, int &y);
     int heuristic (Board *);
-    bool isValid(int x, int y);
+    static bool isValid(int x, int y);
     vector <Board *> expand();
     string toString() const;
     void printPath();

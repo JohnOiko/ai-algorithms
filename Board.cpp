@@ -15,6 +15,7 @@ Board::Board(int table[WIDTH][HEIGHT])
             }
         }
     }
+    setHvalue(0);
     setActionName("");
     setPrevious(nullptr);
 }
@@ -24,12 +25,12 @@ int Board::getContent(int x, int y)
     return content[y][x];
 }
 
-int Board::getGapX()
+int Board::getGapX() const
 {
     return xgap;
 }
 
-int Board::getGapY()
+int Board::getGapY() const
 {
     return ygap;
 }
@@ -46,7 +47,7 @@ int Board::getDepth()
     return counter;
 }
 
-double Board::getHvalue()
+double Board::getHvalue() const
 {
     return Hvalue;
 }
@@ -71,12 +72,12 @@ void Board::setContent(int newContent, int x, int y)
     content[y][x] = newContent;
 }
 
-int Board::setGapX(int x)
+void Board::setGapX(int x)
 {
     xgap = x;
 }
 
-int Board::setGapY(int y)
+void Board::setGapY(int y)
 {
     ygap = y;
 }
@@ -200,7 +201,6 @@ vector <Board *> Board::expand()
         children.push_back(child);
     else
         delete child;
-    child = new Board(*this);
     return children;
 }
 
@@ -239,7 +239,7 @@ void Board::printPath()
         actions.push_back(p->getActionName());
     }
     for (int i = path.size()-1 ; i >= 0 ; i--) {
-        if (actions.at(i) != "") {
+        if (!actions.at(i).empty()) {
             cout<<"Moved gap "<<actions.at(i)<<":"<<endl;
         }
         else {
