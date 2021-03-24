@@ -6,20 +6,16 @@
 
 #IncludeRegexTransform: 
 
-D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.cpp
-Board.h
 D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.h
-
-D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/Board.h
-string
--
-sstream
--
-vector
+iostream
 -
 cmath
 -
-iostream
+string
+-
+vector
+-
+sstream
 -
 
 D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai Algorithms/main.cpp

@@ -186,14 +186,14 @@ int main()
     Astarsol=Astar(initial,goal,examined,mem);
     if (Astarsol!=nullptr)
     {
-        cout<<"depth = "<<Astarsol->getDepth()<<", Mem: "<<mem<<", Examined: "<<examined<<endl;
+        cout<<"depth = "<<Astarsol->getDepth()<<", Mem: "<<mem<<", Examined: "<<examined<<"\n"<<endl;
     }
     else
         cout<<"Problem unsolvable"<<endl;
 
     bool flag = true;
     while (flag) {
-        cout<<"\nPick an algorithm's path to show by entering the corresponding number, or enter any other symbol to close the program:\n1 -> DFS\n2 -> BFS\n3 -> BestFS\n4 -> A*\n"<<endl;
+        cout<<"Pick an algorithm's path to show by entering the corresponding number, or enter any other symbol to close the program:\n1 -> DFS\n2 -> BFS\n3 -> BestFS\n4 -> A*\n"<<endl;
         string choice;
         cin>>choice;
         cout<<endl;

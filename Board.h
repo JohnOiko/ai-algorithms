@@ -6,12 +6,11 @@
 #define BOARD_H
 #define WIDTH 3
 #define HEIGHT 3
-#include <string>
-#include <sstream>
-#include <vector>
-#include <cmath>
-
 #include <iostream>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <sstream>
 
 using namespace std;
 
