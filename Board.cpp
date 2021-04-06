@@ -4,96 +4,56 @@
 
 #include "Board.h"
 
-Board::Board(int table[WIDTH][HEIGHT])
+Board::Board(int table[HEIGHT][WIDTH])
 {
-    for (int i = 0 ; i < WIDTH ; i++) {
-        for (int j = 0 ; j < HEIGHT ; j++) {
+    for (int i = 0 ; i < HEIGHT ; i++) {
+        for (int j = 0 ; j < WIDTH ; j++) {
             content[i][j] = table[i][j];
-            if (content[i][j] == -1) {
-                xgap = j;
-                ygap = i;
+            if (getContent(i, j) == -1) {
+                gapRow = i;
+                gapCol = j;
             }
         }
     }
-    setHvalue(0);
-    setActionName("");
-    setPrevious(nullptr);
-}
-
-int Board::getContent(int x, int y)
-{
-    return content[y][x];
-}
-
-int Board::getGapX() const
-{
-    return xgap;
-}
-
-int Board::getGapY() const
-{
-    return ygap;
+    Hvalue = 0;
+    actionName = "";
+    prev = nullptr;
 }
 
 int Board::getDepth()
 {
     int counter =0;
     Board *p = this;
-    while (p->prev!=nullptr)
+    while (p->getPrevious() != nullptr)
     {
-        p=p->prev;
+        p = p->getPrevious();
         counter++;
     }
     return counter;
 }
 
-double Board::getHvalue() const
+long long Board::getKey() const
 {
-    return Hvalue;
-}
-
-unsigned long Board::getKey()
-{
-    unsigned long k = 0;
-    int power= HEIGHT*WIDTH;
+    long long k = 0;
+    int gapIndex = 0;
     for (int i = 0 ; i < HEIGHT ; i++) {
         for (int j = 0 ; j < WIDTH ; j++) {
-            power--;
-            if (content[i][j] != -1) {
-                k += (int) (pow(10, power) + 0.5) * content[i][j];
-            }
+            if (getContent(i, j) != -1)
+                k += getContent(i, j) * pow(7, i * WIDTH + j);
+            else
+                gapIndex = i * WIDTH + j;
         }
     }
-    return k;
-}
-
-void Board::setContent(int newContent, int x, int y)
-{
-    content[y][x] = newContent;
-}
-
-void Board::setGapX(int x)
-{
-    xgap = x;
-}
-
-void Board::setGapY(int y)
-{
-    ygap = y;
-}
-
-void Board::setHvalue(double h)
-{
-    Hvalue = h;
+    return k * 100 + gapIndex;
 }
 
 bool Board::goUp(Board &n)
 {
-    if (getGapY()>0 && isValid(getGapX(), getGapY()-1)) {
-        n=*this;
-        n.setContent(n.getContent(n.getGapX(), n.getGapY()-1), n.getGapX(), n.getGapY());
-        n.setGapY(n.getGapY()-1);
-        n.setContent(-1, n.getGapX(), n.getGapY());
+    if (isValid(getGapRow()-1, getGapCol())) {
+        n = *this;
+        n.setContent(n.getContent(n.getGapRow()-1, n.getGapCol()), n.getGapRow(), n.getGapCol());
+        n.setGapRow(n.getGapRow()-1);
+        n.setContent(-1, n.getGapRow(), n.getGapCol());
         n.setActionName("up");
         n.setPrevious(this);
         return true;
@@ -103,11 +63,11 @@ bool Board::goUp(Board &n)
 
 bool Board::goDown(Board &n)
 {
-    if (getGapY()<HEIGHT-1 && isValid(getGapX(), getGapY()+1)) {
-        n=*this;
-        n.setContent(n.getContent(n.getGapX(), n.getGapY()+1), n.getGapX(), n.getGapY());
-        n.setGapY(n.getGapY()+1);
-        n.setContent(-1, n.getGapX(), n.getGapY());
+    if (isValid(getGapRow()+1, getGapCol())) {
+        n = *this;
+        n.setContent(n.getContent(n.getGapRow()+1, n.getGapCol()), n.getGapRow(), n.getGapCol());
+        n.setGapRow(n.getGapRow()+1);
+        n.setContent(-1, n.getGapRow(), n.getGapCol());
         n.setActionName("down");
         n.setPrevious(this);
         return true;
@@ -117,11 +77,11 @@ bool Board::goDown(Board &n)
 
 bool Board::goLeft(Board &n)
 {
-    if (getGapX()>0 && isValid(getGapX()-1, getGapY())) {
-        n=*this;
-        n.setContent(n.getContent(n.getGapX()-1, n.getGapY()), n.getGapX(), n.getGapY());
-        n.setGapX(n.getGapX()-1);
-        n.setContent(-1, n.getGapX(), n.getGapY());
+    if (isValid(getGapRow(), getGapCol()-1)) {
+        n = *this;
+        n.setContent(n.getContent(n.getGapRow(), n.getGapCol()-1), n.getGapRow(), n.getGapCol());
+        n.setGapCol(n.getGapCol()-1);
+        n.setContent(-1, n.getGapRow(), n.getGapCol());
         n.setActionName("left");
         n.setPrevious(this);
         return true;
@@ -131,11 +91,11 @@ bool Board::goLeft(Board &n)
 
 bool Board::goRight(Board &n)
 {
-    if (getGapX()<WIDTH-1 && isValid(getGapX()+1, getGapY())) {
-        n=*this;
-        n.setContent(n.getContent(n.getGapX()+1, n.getGapY()), n.getGapX(), n.getGapY());
-        n.setGapX(n.getGapX()+1);
-        n.setContent(-1, n.getGapX(), n.getGapY());
+    if (isValid(getGapRow(), getGapCol()+1)) {
+        n = *this;
+        n.setContent(n.getContent(n.getGapRow(), n.getGapCol()+1), n.getGapRow(), n.getGapCol());
+        n.setGapCol(n.getGapCol()+1);
+        n.setContent(-1, n.getGapRow(), n.getGapCol());
         n.setActionName("right");
         n.setPrevious(this);
         return true;
@@ -143,43 +103,42 @@ bool Board::goRight(Board &n)
     return false;
 }
 
-void Board::findContent(int key, int &x, int &y)
+bool Board::findContent(int key, int &row, int &col) const
 {
-    x = 0;
-    y = 0;
-    for (int i = 0 ; i < WIDTH ; i++) {
-        for (int j = 0 ; j < HEIGHT ; j++) {
-            if (key == content[i][j]) {
-                x = j;
-                y = i;
-                return;
+    row = 0;
+    col = 0;
+    for (int i = 0 ; i < HEIGHT ; i++) {
+        for (int j = 0 ; j < WIDTH ; j++) {
+            if (key == getContent(i, j)) {
+                row = i;
+                col = j;
+                return true;
             }
         }
     }
+    return false;
 }
 
-int Board::heuristic(Board *goal)
+int Board::heuristic(Board *goal) const
 {
     int dist = 0;
-    int x;
-    int y;
-    for (int i = 0 ; i < WIDTH ; i++) {
+    int row;
+    int col;
+    for (int i = 0 ; i < HEIGHT ; i++) {
         for (int j = 0 ; j < WIDTH ; j++) {
-            findContent(goal->getContent(i, j), x, y);
-            dist += abs(x-i) + abs(y-j);
+            if (!findContent(goal->getContent(i, j), row, col)) {
+                row = 0;
+                col = 0;
+            }
+            dist += abs(row - i) + abs(col - j);
         }
     }
     return dist;
 }
 
-bool Board::isValid(int x, int y)
-{
-    return (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT);
-}
-
 vector <Board *> Board::expand()
 {
-    vector <Board *> children;
+    vector <Board*> children;
     Board *child;
     child = new Board(*this);
     if (goUp(*child))
@@ -206,19 +165,17 @@ vector <Board *> Board::expand()
 
 string Board::toString () const
 {
+    int size = to_string(HEIGHT * WIDTH).size();
     stringstream ot;
     for (int i = 0 ; i < HEIGHT ; i++) {
         ot<<"[";
         for (int j = 0 ; j < WIDTH ; j++) {
-            if (content[i][j] == -1) {
+            for (int k = 0 ; k < size - (getContent(i, j) == -1 ? 0 : to_string(getContent(i, j)).size()) ; k++)
                 ot<<" ";
-            }
-            else {
-                ot<<content[i][j];
-            }
-            if (j < WIDTH - 1) {
+            if (getContent(i, j) != -1)
+                ot<<getContent(i, j);
+            if (j < WIDTH - 1)
                 ot<<" ";
-            }
         }
         ot<<"]\n";
     }
@@ -232,9 +189,9 @@ void Board::printPath()
     Board *p = this;
     path.push_back(p);
     actions.push_back(p->getActionName());
-    while (p->prev!=nullptr)
+    while (p->getPrevious() != nullptr)
     {
-        p=p->prev;
+        p=p->getPrevious();
         path.push_back(p);
         actions.push_back(p->getActionName());
     }
@@ -253,7 +210,7 @@ bool Board::operator==(const Board& o) const
 {
     for (int i = 0 ; i < WIDTH ; i++) {
         for (int j = 0 ; j < HEIGHT ; j++) {
-            if (content[i][j] != o.content[i][j]) {
+            if (getContent(i, j) != o.getContent(i, j)) {
                 return false;
             }
         }

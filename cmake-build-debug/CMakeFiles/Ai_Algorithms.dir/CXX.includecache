@@ -6,12 +6,18 @@
 
 #IncludeRegexTransform: 
 
+D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.cpp
+Board.h
+D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
+
 D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
 iostream
 -
 cmath
 -
 string
+-
+utility
 -
 vector
 -
