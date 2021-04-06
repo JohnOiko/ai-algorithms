@@ -1,7 +1,3 @@
-//
-// Created by John on 3/24/2021.
-//
-
 #include "Board.h"
 
 Board::Board(int table[HEIGHT][WIDTH])

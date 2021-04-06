@@ -1,7 +1,3 @@
-//
-// Created by John on 3/24/2021.
-//
-
 #ifndef BOARD_H
 #define BOARD_H
 
