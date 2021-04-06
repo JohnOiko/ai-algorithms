@@ -13,27 +13,27 @@ using namespace std;
 Board *DFS(Board *initial, Board *goal, long long &examined, long long &mem)
 {
     stack<Board *> agenda;
-    unordered_map <long long,Board *> closed;
+    unordered_map <long long, Board *> closed;
 
     agenda.push(initial);
-    examined=0;
-    mem=1;
-    while (agenda.size()>0 && examined < EXAM_LIMIT)
+    examined = 0;
+    mem = 1;
+    while (agenda.size() > 0 && examined < EXAM_LIMIT)
     {
         if (agenda.size() + closed.size() > mem)
             mem = agenda.size() + closed.size();
         Board *s = agenda.top();
         agenda.pop();
-        if (closed.count(s->getKey())==0)
+        if (closed.count(s->getKey()) == 0)
         {
             examined++;
-            if (*s==*goal)
+            if (*s == *goal)
                 return s;
-            pair<long long,Board *> k (s->getKey(),s);
+            pair<long long, Board *> k (s->getKey(), s);
             closed.insert(k);
-            vector<Board *> children =s->expand();
-            for (unsigned int i=0;i<children.size();i++)
-                if (closed.count(children[i]->getKey())==0)
+            vector<Board *> children = s->expand();
+            for (unsigned int i = 0 ; i < children.size() ; i++)
+                if (closed.count(children[i]->getKey()) == 0)
                     agenda.push(children[i]);
                 else
                     delete children[i];
@@ -45,27 +45,27 @@ Board *DFS(Board *initial, Board *goal, long long &examined, long long &mem)
 Board *BFS(Board *initial, Board *goal, long long &examined, long long &mem)
 {
     queue<Board *> agenda;
-    unordered_map <long long,Board *> closed;
+    unordered_map <long long, Board *> closed;
 
     agenda.push(initial);
-    examined=0;
-    mem=1;
+    examined = 0;
+    mem = 1;
     while (agenda.size() > 0 && examined < EXAM_LIMIT)
     {
         if (agenda.size() + closed.size() > mem)
             mem = agenda.size() + closed.size();
         Board *s = agenda.front();
         agenda.pop();
-        if (closed.count(s->getKey())==0)
+        if (closed.count(s->getKey()) == 0)
         {
             examined++;
-            if (*s==*goal)
+            if (*s == *goal)
                 return s;
-            pair<long long,Board *> k (s->getKey(),s);
+            pair<long long, Board *> k (s->getKey(), s);
             closed.insert(k);
-            vector<Board *> children =s->expand();
-            for (unsigned int i=0;i<children.size();i++)
-                if (closed.count(children[i]->getKey())==0)
+            vector<Board *> children = s->expand();
+            for (unsigned int i = 0 ; i < children.size() ; i++)
+                if (closed.count(children[i]->getKey()) == 0)
                     agenda.push(children[i]);
                 else
                     delete children[i];
@@ -76,29 +76,29 @@ Board *BFS(Board *initial, Board *goal, long long &examined, long long &mem)
 
 Board *BestFS(Board *initial, Board *goal, long long &examined, long long &mem)
 {
-    priority_queue <Board*, vector<Board *>, myComparator > agenda;
-    unordered_map <long long,Board*> closed;
+    priority_queue <Board*, vector<Board *>, myComparator> agenda;
+    unordered_map <long long, Board *> closed;
     agenda.push(initial);
     examined = 0;
-    mem=1;
-    while (agenda.size()>0 && examined < EXAM_LIMIT)
+    mem = 1;
+    while (agenda.size() > 0 && examined < EXAM_LIMIT)
     {
         if (agenda.size() + closed.size() > mem)
             mem = agenda.size() + closed.size();
         Board *s = agenda.top();
         agenda.pop();
 
-        if (closed.count(s->getKey())==0)
+        if (closed.count(s->getKey()) == 0)
         {
             examined++;
-            if (*s==*goal)
+            if (*s == *goal)
                 return s;
-            pair<long long,Board*> k (s->getKey(),s);
+            pair<long long, Board *> k (s->getKey(), s);
             closed.insert(k);
             vector<Board *> children = s->expand();
-            for (unsigned int i=0;i<children.size();i++)
+            for (unsigned int i = 0 ; i < children.size() ; i++)
             {
-                if (closed.count(children[i]->getKey())==0)
+                if (closed.count(children[i]->getKey()) == 0)
                 {
                     children.at(i)->setHvalue(children.at(i)->heuristic(goal));
                     agenda.push(children.at(i));
@@ -116,29 +116,29 @@ Board *Astar(Board *initial, Board *goal, long long &examined, long long &mem)
     double heuristicWeight = 1;
     if (HEIGHT > 3 || WIDTH > 3)
         heuristicWeight = 2;
-    priority_queue <Board*, vector<Board *>, myComparator > agenda;
-    unordered_map <long long,Board*> closed;
+    priority_queue <Board*, vector<Board *>, myComparator> agenda;
+    unordered_map <long long, Board *> closed;
     agenda.push(initial);
     examined = 0;
-    mem=1;
-    while (agenda.size()>0 && examined < EXAM_LIMIT)
+    mem = 1;
+    while (agenda.size() > 0 && examined < EXAM_LIMIT)
     {
         if (agenda.size() + closed.size() > mem)
             mem = agenda.size() + closed.size();
         Board *s = agenda.top();
         agenda.pop();
 
-        if (closed.count(s->getKey())==0)
+        if (closed.count(s->getKey()) == 0)
         {
             examined++;
-            if (*s==*goal)
+            if (*s == *goal)
                 return s;
-            pair<long long,Board*> k (s->getKey(),s);
+            pair<long long, Board *> k (s->getKey(), s);
             closed.insert(k);
             vector<Board *> children = s->expand();
-            for (unsigned int i=0;i<children.size();i++)
+            for (unsigned int i = 0 ; i < children.size() ; i++)
             {
-                if (closed.count(children[i]->getKey())==0)
+                if (closed.count(children[i]->getKey()) == 0)
                 {
                     children.at(i)->setHvalue(heuristicWeight * children.at(i)->heuristic(goal) + children.at(i)->getDepth());
                     agenda.push(children.at(i));
@@ -162,18 +162,16 @@ void printResults(Board *solution, long long examined, long long mem) {
 
 void randomize(int array[HEIGHT][WIDTH]) {
     for (int i = 0 ; i < HEIGHT ; i++) {
-        for (int j = 0 ; j < WIDTH ; j++) {
+        for (int j = 0 ; j < WIDTH ; j++)
             array[i][j] = 0;
-        }
     }
     int size = HEIGHT * WIDTH;
     int randIndex = rand() % size;
     array[randIndex / WIDTH][randIndex % WIDTH] = -1;
     for (int i = 1 ; i < size ; i++) {
         randIndex = rand() % size;
-        while (array[randIndex / WIDTH][randIndex % WIDTH] != 0) {
+        while (array[randIndex / WIDTH][randIndex % WIDTH] != 0)
             randIndex = rand() % size;
-        }
         array[randIndex / WIDTH][randIndex % WIDTH] = i;
     }
 }
@@ -207,9 +205,8 @@ int main()
     }
     else {
         for (int i = 0 ; i < HEIGHT ; i++) {
-            for (int j = 0 ; j < WIDTH ; j++) {
+            for (int j = 0 ; j < WIDTH ; j++)
                 start[i][j] = defaultStart[i][j];
-            }
         }
     }
 

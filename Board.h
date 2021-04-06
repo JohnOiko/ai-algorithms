@@ -63,7 +63,7 @@ class myComparator
 public:
     int operator() (Board *p1 , Board *p2) const
     {
-        return p1->getHvalue()>p2->getHvalue();
+        return p1->getHvalue() > p2->getHvalue();
     }
 };
 
