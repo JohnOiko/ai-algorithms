@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.cpp" "D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/cmake-build-debug/CMakeFiles/Ai_Algorithms.dir/Board.cpp.obj"
-  "D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/main.cpp" "D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/cmake-build-debug/CMakeFiles/Ai_Algorithms.dir/main.cpp.obj"
+  "D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.cpp" "D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/cmake-build-debug/CMakeFiles/Ai_Algorithms.dir/Board.cpp.obj"
+  "D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/main.cpp" "D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/cmake-build-debug/CMakeFiles/Ai_Algorithms.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

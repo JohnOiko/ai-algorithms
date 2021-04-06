@@ -1,4 +1,4 @@
-"D:\JetBrains\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "D:\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms"
+D:\JetBrains\Toolbox\Apps\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "D:\JetBrains\IdeaProjects\CLionProjects\Artificial Intelligence\AI Project 1\Ai_Algorithms"
 -- The C compiler identification is GNU 5.1.0
 -- The CXX compiler identification is GNU 5.1.0
 -- Check for working C compiler: D:/Code Blocks/CodeBlocks/MinGW/bin/gcc.exe
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/cmake-build-debug
+-- Build files have been written to: D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/cmake-build-debug
