@@ -6,19 +6,25 @@
 
 #IncludeRegexTransform: 
 
-D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
+D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.cpp
+Board.h
+D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
+
+D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
 iostream
 -
 cmath
 -
 string
 -
+utility
+-
 vector
 -
 sstream
 -
 
-D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/main.cpp
+D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/main.cpp
 iostream
 -
 stack
@@ -32,5 +38,5 @@ unordered_map
 unordered_set
 -
 Board.h
-D:/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
+D:/JetBrains/IdeaProjects/CLionProjects/Artificial Intelligence/AI Project 1/Ai_Algorithms/Board.h
 
