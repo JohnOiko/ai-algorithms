@@ -235,8 +235,8 @@ int main()
     cout<<"Initial:"<<endl<<initial->toString()<<endl;
     cout<<"Goal:"<<endl<<goal->toString()<<endl;
 
-    cout<<"DFS: ";
     Board *DFSsol;
+    cout<<"DFS: ";
     DFSsol=DFS(initial,goal,examined,mem);
     printResults(DFSsol, examined, mem);
 
