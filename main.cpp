@@ -235,24 +235,20 @@ int main()
     cout<<"Initial:"<<endl<<initial->toString()<<endl;
     cout<<"Goal:"<<endl<<goal->toString()<<endl;
 
-    Board *DFSsol;
     cout<<"DFS: ";
-    DFSsol=DFS(initial,goal,examined,mem);
+    Board *DFSsol = DFS(initial,goal,examined,mem);
     printResults(DFSsol, examined, mem);
 
-    Board *BFSsol;
     cout<<endl<<"BFS: ";
-    BFSsol=BFS(initial,goal,examined,mem);
+    Board *BFSsol = BFS(initial,goal,examined,mem);
     printResults(BFSsol, examined, mem);
 
-    Board *BestFSsol;
     cout<<endl<<"BestFS: ";
-    BestFSsol=BestFS(initial,goal,examined,mem);
+    Board *BestFSsol = BestFS(initial,goal,examined,mem);
     printResults(BestFSsol, examined, mem);
 
-    Board *Astarsol;
     cout<<endl<<"A*: ";
-    Astarsol=Astar(initial,goal,examined,mem);
+    Board *Astarsol = Astar(initial,goal,examined,mem);
     printResults(Astarsol, examined, mem);
 
     if (DFSsol != nullptr || BFSsol != nullptr || BestFSsol != nullptr || Astarsol != nullptr) {
