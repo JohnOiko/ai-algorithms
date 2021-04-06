@@ -266,9 +266,8 @@ int main()
                 BestFSsol->printPath();
             else if (choice == "4" && Astarsol != nullptr)
                 Astarsol->printPath();
-            else if (choice == "1" || choice == "2" || choice == "3" || choice == "4") {
+            else if (choice == "1" || choice == "2" || choice == "3" || choice == "4")
                 cout<<"No path available as solution wasn't found\n"<<endl;
-            }
             else {
                 flag = false;
                 cout<<"Exiting program."<<endl;
